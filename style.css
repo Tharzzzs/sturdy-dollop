@@ -1,0 +1,38 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('moves/moves/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+.area-container {
+    position: absolute;
+    left: 50%;
+    bottom: 150px; 
+    transform: translateX(-60%);
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.area-img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    box-sizing: border-box; 
+}
+#character {
+    position: absolute;
+    left: 50%;
+    /* Move character down by 20px */
+    top: calc(100% - 150px - 150px); /* Was 100px, now 80px for lower position */
+    transform: translateX(-50%);
+    width: 100px;
+    z-index: 2;
+}

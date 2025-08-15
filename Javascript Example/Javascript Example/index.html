@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<title>Javascript Example 01</title>
+	</head>
+
+	<body  onkeypress='pressed()'>
+		<h1>Javascript Example</h1>
+		<div id='section1' onclick='clicked2()' style='overflow: hidden; padding: 10px; border: solid 1px #333; width: 80%; height: 400px; margin: 0 auto'>
+			<!--<div style='width: 98%; padding: 5px; margin: 1%; border: solid 1px #f00'>Me: Hell There!</div>
+			<div style='text-align: right; width: 98%; padding: 5px; margin: 1%; border: solid 1px #00f'>Me: Hell There!</div>
+			<div style='width: 98%; padding: 5px; margin: 1%; border: solid 1px #f00'>Me: Hell There!</div>-->
+			<img id='pingo' src='pingo.png' style='width:75px; position:relative; top: 0px; left: 0px'>
+		</div>
+		<input type='text' id='message'>
+		<button onclick="clicked()">Click Me</button>
+		<button onmouseover='overed()' id='forfun' style='position:absolute; top: 10px; left:500px;'>Click Me Please(Gaan Piso)!</button>
+	</body>
+	<script>
+		var x=0,y=0,ctr=0;
+
+		function loader(){
+			if(ctr>0){
+				y-=15;
+				ctr--;
+			}else{
+				y+=10;
+				if(y>400){
+					alert("What did you do to PINGO?");
+					x = 0; y = 0;
+				}
+			}
+			x+=5;
+			if(x>1500){
+				x=0;
+			}
+			pingo = document.getElementById("pingo");
+			pingo.style.top = y +"px";
+			pingo.style.left = x +"px";
+		}
+		setInterval("loader()",50);
+
+		function clicked2(){
+			ctr=10;
+		}
+		function pressed(){
+			ctr=10;
+		}
+		function overed(){
+			elem = document.getElementById("forfun");
+			elem.style.top = Math.floor(Math.random()*900) + "px";
+			elem.style.left = Math.floor(Math.random()*1700) + "px";
+		}
+		function clicked(){
+			// Connect to server and saved message...
+			msg = document.getElementById("message");
+			//alert(msg.value);
+			div = document.getElementById("section1");
+			div.innerHTML = div.innerHTML + "<div style='width: 98%; padding: 5px; margin: 1%; border: solid 1px #f00'>"
+								+msg.value+"</div>";
+		}
+	</script>
+</html>
