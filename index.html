@@ -3,14 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Batuti</title>
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <div class="area-container">
-        <img src="moves/moves/area.png" class="area-img" alt="Area">
+    <!-- Added comprehensive UI elements for enhanced gameplay -->
+    <div id="ui-container">
+        <div id="health-container">
+            <div id="health-bar"></div>
+            <span id="health-text">100/100</span>
+        </div>
+        
+        <div id="score-container">
+            <span>Score: <span id="score">0</span></span>
+            <span>Level: <span id="level">1</span></span>
+        </div>
+        
+        <div id="abilities-container">
+            <div class="ability" id="dash-ability">
+                <span>Dash (Q)</span>
+                <div class="cooldown-bar" id="dash-cooldown"></div>
+            </div>
+            <div class="ability" id="shield-ability">
+                <span>Shield (E)</span>
+                <div class="cooldown-bar" id="shield-cooldown"></div>
+            </div>
+        </div>
+        
+        <div id="combo-container">
+            <span>Combo: <span id="combo">0</span></span>
+        </div>
     </div>
-    <img id="character" src="moves/moves/idle-1.png" alt="Character">
+
+    <div class="area-container">
+        <img src="/moves/moves/area.png?height=200&width=700" class="area-img" alt="Area">
+    </div>
+    
+    <img id="character" src="moves/moves/idle-1.png?height=100&width=100" alt="Character">
+    
+    <!-- Added particle system container -->
+    <div id="particles-container"></div>
+    
     <script src="script.js"></script>
 </body>
 </html>
